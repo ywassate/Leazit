@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Build
+dist/
+build/
+.cache/
+
+# Logs
+*.log
+
+# Environment
+.env
+
+# Misc
+.DS_Store
+.vscode/
+.idea/
+*.tsbuildinfo
