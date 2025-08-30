@@ -1,25 +1,25 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import { User as FirebaseUser, getAuth, signOut } from "firebase/auth";
 import {
-  ChevronDown,
-  Menu,
-  X,
-  CarFront,
-  Truck,
-  LayoutGrid,
-  Handshake,
   CalendarClock,
-  TimerReset,
-  LogOut,
-  User,
+  CarFront,
+  ChevronDown,
+  ChevronRight,
   CreditCard,
+  Handshake,
+  LayoutGrid,
+  LogOut,
+  Menu,
   PhoneCall,
   Star,
-  ChevronRight, // import right‑facing chevron to match Flease.fr dropdown style
+  TimerReset,
+  Truck,
+  User,
+  X,
 } from "lucide-react";
-import { User as FirebaseUser, signOut, getAuth } from "firebase/auth";
-import DropdownMenu, { DropdownItem } from "./DropDown";
-import AuthModal from "./AuthModal";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { auth } from "../firebase";
+import AuthModal from "./AuthModal";
+import DropdownMenu, { DropdownItem } from "./DropDown";
 
 // API base URL (ex: /api en prod, http://localhost:5050/api en dev)
 const API_BASE_URL = import.meta.env.VITE_API_URL ?? "/api";
@@ -42,7 +42,7 @@ interface BrandWithModels {
 interface HeaderProps {
   user: FirebaseUser | null;
   userChecked: boolean;
-  onPageChange: (page: string, data?: any) => void;
+  onPageChange: (page: string, data?: unknown) => void;
   scrollToFaq?: () => void;
   onLogout?: () => void;
 }
@@ -74,8 +74,8 @@ const Header: React.FC<HeaderProps> = ({
   >(null);
   const [dropdownAccountOpen, setDropdownAccountOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [hoveredDropdown, setHoveredDropdown] = useState<
+  const [, setIsAnimating] = useState(false);
+  const [, setHoveredDropdown] = useState<
     "voitures" | "offres" | "marques" | null
   >(null);
   const [allVehicles, setAllVehicles] = useState<
@@ -112,9 +112,7 @@ const Header: React.FC<HeaderProps> = ({
   const offresContainerRef = useRef<HTMLDivElement>(null);
   const marquesContainerRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const [brandsWithModels, setBrandsWithModels] = useState<BrandWithModels[]>(
-    []
-  );
+  const [, setBrandsWithModels] = useState<BrandWithModels[]>([]);
   const [favoriteModels, setFavoriteModels] = useState<
     (Model & { brandName: string; brandLogo: string })[]
   >([]);
@@ -184,7 +182,7 @@ const Header: React.FC<HeaderProps> = ({
           setAllVehicles(allVehiclesData);
           setVehiclesLoading(false);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Erreur chargement véhicules:", err);
         if (alive) {
           setVehiclesError(
@@ -253,7 +251,7 @@ const Header: React.FC<HeaderProps> = ({
       setDropdownAccountOpen(false);
     }
   };
-  const handleMouseLeave = (dropdown: "voitures" | "offres" | "marques") => {
+  const handleMouseLeave = () => {
     if (window.innerWidth >= 768) {
       clearHoverTimeout();
       hoverTimeoutRef.current = setTimeout(() => {
@@ -387,7 +385,7 @@ const Header: React.FC<HeaderProps> = ({
           setFavoriteModels(allFavoriteModels);
           setBrandsLoading(false);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Erreur chargement brands:", err);
         if (alive) {
           setBrandsError("Impossible de charger les marques pour le moment.");
@@ -433,7 +431,11 @@ const Header: React.FC<HeaderProps> = ({
         .toUpperCase()
     : (user?.email ?? "").slice(0, 2).toUpperCase();
 
-  const handleLogoutClick = async (e?: React.MouseEvent | any) => {
+  const handleLogoutClick = async (
+    e?:
+      | React.MouseEvent
+      | { preventDefault?: () => void; stopPropagation?: () => void }
+  ) => {
     e?.preventDefault?.();
     e?.stopPropagation?.();
     try {
@@ -508,9 +510,13 @@ const Header: React.FC<HeaderProps> = ({
       label: "Se déconnecter",
       desc: "Déconnexion sécurisée de votre compte",
       icon: <LogOut className="w-4 h-4 text-gray-400" />,
-      onClick: (e?: any) => {
+      onClick: (e?: unknown) => {
         setDropdownAccountOpen(false);
-        handleLogoutClick(e);
+        handleLogoutClick(
+          e as
+            | React.MouseEvent
+            | { preventDefault?: () => void; stopPropagation?: () => void }
+        );
       },
     },
   ];
@@ -690,7 +696,7 @@ const Header: React.FC<HeaderProps> = ({
               className=""
               ref={voituresContainerRef}
               onMouseEnter={() => handleMouseEnter("voitures")}
-              onMouseLeave={() => handleMouseLeave("voitures")}
+              onMouseLeave={handleMouseLeave}
             >
               <NavButton
                 onClick={() =>
@@ -790,7 +796,7 @@ const Header: React.FC<HeaderProps> = ({
                         <h2 className="text-2xl font-semibold text-white mb-3">
                           Nos modèles
                         </h2>
-                        <div className="max-h-80 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                        <div className="max-h-80 overflow-y-auto overflow-x-hidden scrollbar-none">
                           <div className="grid grid-cols-2 gap-4">
                             {getFilteredVehicles(voitureCategory).map(
                               (vehicle) => (
@@ -845,7 +851,7 @@ const Header: React.FC<HeaderProps> = ({
               className=""
               ref={marquesContainerRef}
               onMouseEnter={() => handleMouseEnter("marques")}
-              onMouseLeave={() => handleMouseLeave("marques")}
+              onMouseLeave={handleMouseLeave}
             >
               <NavButton
                 onClick={() =>
@@ -926,7 +932,7 @@ const Header: React.FC<HeaderProps> = ({
                           Références favorites
                         </h2>
                         <div className="grid grid-cols-2 gap-3">
-                          {favoriteModels.slice(0, 6).map((model, index) => (
+                          {favoriteModels.slice(0, 6).map((model) => (
                             <button
                               key={`fav-model-${model.id}`}
                               onClick={() => {
@@ -968,7 +974,7 @@ const Header: React.FC<HeaderProps> = ({
               className=""
               ref={offresContainerRef}
               onMouseEnter={() => handleMouseEnter("offres")}
-              onMouseLeave={() => handleMouseLeave("offres")}
+              onMouseLeave={handleMouseLeave}
             >
               <NavButton
                 onClick={() =>

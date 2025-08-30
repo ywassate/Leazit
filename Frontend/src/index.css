@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @keyframes scroll-linear {
   0% {
     transform: translateX(0);
@@ -38,6 +36,7 @@
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -47,7 +46,17 @@ body.modal-open {
   height: 100vh;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   overscroll-behavior: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
