@@ -9,7 +9,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import FancyButton from "../components/FancyButton";
-import FancyButtonDark from "../components/FancyButtonDark";
 
 interface ServiceDetailPageProps {
   serviceType: string;
@@ -29,56 +28,61 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           description:
             "Idéal pour les entreprises souhaitant un véhicule sur plusieurs mois. Inclut entretien, assurance tous risques et assistance 24/7.",
           features: [
-            "Durée de 12 à 50 mois : choisissez la durée adaptée à votre entreprise:contentReference[oaicite:3]{index=3}",
-            "Outil de gestion de flotte automatisé offert : suivi des kilomètres, alertes entretien et accès à vos documents:contentReference[oaicite:4]{index=4}",
-            "Interlocuteur unique et service dédié tout au long du contrat:contentReference[oaicite:5]{index=5}",
-            "Aucun apport demandé, une caution restituable peut être sollicitée:contentReference[oaicite:6]{index=6}",
-            "Véhicules quasi‑neufs livrés en un mois partout en France:contentReference[oaicite:7]{index=7}",
+            "Durée de 12 à 50 mois : choisissez la durée adaptée à votre entreprise",
+            "Outil de gestion de flotte automatisé offert : suivi des kilomètres, alertes entretien et accès à vos documents",
+            "Interlocuteur unique et service dédié tout au long du contrat",
+            "Aucun apport demandé, une caution restituable peut être sollicitée",
+            "Véhicules quasi‑neufs livrés en un mois partout au Maroc",
           ],
           offerOverview: [
             {
               title: "Interlocuteur unique & services inclus",
               description:
-                "Un conseiller dédié vous accompagne de la signature à la restitution. En cas de panne, un véhicule de remplacement est mis à disposition pendant toute la durée d’immobilisation:contentReference[oaicite:8]{index=8}.",
+                "Un conseiller dédié vous accompagne de la signature à la restitution. En cas de panne, un véhicule de remplacement est mis à disposition pendant toute la durée d’immobilisation.",
             },
             {
               title: "Gestion de flotte automatisée",
               description:
-                "Outil gratuit pour suivre en temps réel le kilométrage, recevoir des alertes d’entretien, calculer le coût total de détention et centraliser tous vos documents:contentReference[oaicite:9]{index=9}.",
+                "Outil gratuit pour suivre en temps réel le kilométrage, recevoir des alertes d’entretien, calculer le coût total de détention et centraliser tous vos documents.",
             },
             {
               title: "Véhicules quasi‑neufs variés",
               description:
-                "Choisissez parmi des citadines, berlines, breaks, SUV ou utilitaires quasi‑neufs. Ces véhicules, adaptés aux besoins des salariés, sont livrés en moins d’un mois:contentReference[oaicite:10]{index=10}.",
+                "Choisissez parmi des citadines, berlines, breaks, SUV ou utilitaires quasi‑neufs. Ces véhicules, adaptés aux besoins des salariés, sont livrés en moins d’un mois.",
             },
           ],
           fleetManagementIntro:
-            "Simplifiez la gestion de vos véhicules d’entreprise et gagnez un temps précieux:contentReference[oaicite:11]{index=11}.",
+            "Simplifiez la gestion de vos véhicules d’entreprise et gagnez un temps précieux.",
           fleetManagementFeatures: [
             {
               title: "Suivi kilométrique en temps réel",
               description:
-                "Suivez facilement les kilomètres parcourus de tous vos véhicules en temps réel:contentReference[oaicite:12]{index=12}.",
+                "Suivez facilement les kilomètres parcourus par tous vos véhicules en temps réel.",
+              image: "/kilometrage.png",
             },
             {
               title: "Gestion des conducteurs",
               description:
-                "Attribuez vos véhicules à vos collaborateurs en un clic:contentReference[oaicite:13]{index=13}.",
+                "Attribuez vos véhicules à vos collaborateurs en un seul clic et gardez une visibilité claire.",
+              image: "/conducteurs.png",
             },
             {
               title: "Alertes pour les entretiens",
               description:
-                "Recevez des alertes pour vos prochains entretiens et ne manquez aucun rendez‑vous:contentReference[oaicite:14]{index=14}.",
+                "Recevez automatiquement des notifications pour vos prochains entretiens afin de ne manquer aucun rendez-vous.",
+              image: "/entretiens.png",
             },
             {
               title: "Suivi des contrats de location",
               description:
-                "Visualisez vos cycles de location et vos contrats en un coup d’œil:contentReference[oaicite:15]{index=15}.",
+                "Visualisez facilement les cycles de location et tous vos contrats en un coup d’œil.",
+              image: "/contrats.png",
             },
             {
               title: "Factures & documents centralisés",
               description:
-                "Gérez vos factures et centralisez tous vos documents au même endroit:contentReference[oaicite:16]{index=16}.",
+                "Centralisez et gérez vos factures ainsi que l’ensemble de vos documents administratifs au même endroit.",
+              image: "/documents.png",
             },
           ],
           pricing: [
@@ -105,7 +109,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 "Un seul interlocuteur pour tous vos besoins automobile.",
               icon: <Shield className="h-8 w-8 text-gray-600" />,
               details:
-                "Grâce à notre outil de gestion de flotte automatisé, suivez en temps réel les kilomètres parcourus, recevez des alertes d’entretien et accédez à tous vos contrats, factures et documents:contentReference[oaicite:17]{index=17}.",
+                "Grâce à notre outil de gestion de flotte automatisé, suivez en temps réel les kilomètres parcourus, recevez des alertes d’entretien et accédez à tous vos contrats, factures et documents.",
             },
             {
               title: "Oubliez les mauvaises surprises",
@@ -121,7 +125,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 "Chez Flease nous livrons nos véhicules quasi neufs en un mois !",
               icon: <Award className="h-8 w-8 text-gray-600" />,
               details:
-                "Grâce à notre stock, la livraison s’effectue en moyenne en 1 mois, bien plus rapidement que la concurrence:contentReference[oaicite:19]{index=19}.",
+                "Grâce à notre stock, la livraison s’effectue en moyenne en 1 mois, bien plus rapidement que la concurrence.",
             },
           ],
           testimonials: [
@@ -145,22 +149,22 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               question:
                 "Un apport est‑il demandé pour une location longue durée ?",
               answer:
-                "Aucun apport n’est exigé pour louer un véhicule:contentReference[oaicite:20]{index=20}. En cas de garantie insuffisante, une caution peut être demandée et vous sera restituée en fin de contrat.",
+                "Aucun apport n’est exigé pour louer un véhicule. En cas de garantie insuffisante, une caution peut être demandée et vous sera restituée en fin de contrat.",
             },
             {
               question: "Comment est calculé le loyer en LLD ?",
               answer:
-                "Le loyer dépend du kilométrage annuel, de la durée de location et des entretiens réguliers:contentReference[oaicite:21]{index=21}. Des options telles que l’assurance ou les pneumatiques peuvent être ajoutées.",
+                "Le loyer dépend du kilométrage annuel, de la durée de location et des entretiens réguliers. Des options telles que l’assurance ou les pneumatiques peuvent être ajoutées.",
             },
             {
               question: "Quels services sont inclus dans le prix ?",
               answer:
-                "Les offres Flease incluent l’assistance et le dépannage 24h/24, un véhicule de remplacement en cas de panne, les réparations et entretiens, la révision, le contrôle technique et une assurance tous risques:contentReference[oaicite:22]{index=22}.",
+                "Les offres Flease incluent l’assistance et le dépannage 24h/24, un véhicule de remplacement en cas de panne, les réparations et entretiens, la révision, le contrôle technique et une assurance tous risques.",
             },
             {
               question: "Puis‑je modifier la durée de mon contrat ?",
               answer:
-                "Oui. Grâce au boîtier télématique, vous suivez votre kilométrage en temps réel et un avenant peut être établi gratuitement pour ajuster votre contrat:contentReference[oaicite:23]{index=23}.",
+                "Oui. Grâce au boîtier télématique, vous suivez votre kilométrage en temps réel et un avenant peut être établi gratuitement pour ajuster votre contrat.",
             },
           ],
         };
@@ -172,56 +176,61 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           description:
             "Idéal pour les missions temporaires, les périodes d’essai ou les pics d’activité. Louez à partir de 1 mois pour un besoin ponctuel.",
           features: [
-            "Durée flexible de 1 à 24 mois:contentReference[oaicite:24]{index=24}",
-            "Catalogue varié : citadine, compacte, break, SUV et utilitaire:contentReference[oaicite:25]{index=25}",
-            "Véhicules équipés business : Apple Car Play, commandes au volant, régulateur de vitesse, kit mains libres, aide au stationnement:contentReference[oaicite:26]{index=26}",
-            "Livraison quasi‑immédiate en 7 jours partout en France:contentReference[oaicite:27]{index=27}",
-            "Offre période d’essai : convertissez en LLD ou résiliez sans pénalité:contentReference[oaicite:28]{index=28}",
+            "Durée flexible de 1 à 24 mois",
+            "Catalogue varié : citadine, compacte, break, SUV et utilitaire.",
+            "Véhicules équipés business : Apple Car Play, commandes au volant, régulateur de vitesse, kit mains libres, aide au stationnement",
+            "Livraison quasi‑immédiate en 7 jours partout au Maroc",
+            "Offre période d’essai : convertissez en LLD ou résiliez sans pénalité",
           ],
           offerOverview: [
             {
               title: "Durée sur mesure",
               description:
-                "Louez un véhicule pour une durée de 1 à 24 mois sans engagement:contentReference[oaicite:29]{index=29}.",
+                "Louez un véhicule pour une durée de 1 à 24 mois sans engagement.",
             },
             {
               title: "Véhicules divers et équipés",
               description:
-                "Profitez de citadines, compactes, breaks, SUV et utilitaires dotés d’équipements business (Apple Car Play, régulateur de vitesse, aides au stationnement…):contentReference[oaicite:30]{index=30}.",
+                "Profitez de citadines, compactes, breaks, SUV et utilitaires dotés d’équipements business (Apple Car Play, régulateur de vitesse, aides au stationnement…).",
             },
             {
               title: "Livraison rapide & période d’essai",
               description:
-                "Vos véhicules sont livrés en 7 jours:contentReference[oaicite:31]{index=31}. L’offre période d’essai permet de tester un véhicule et de basculer en LLD ou de résilier sans pénalité:contentReference[oaicite:32]{index=32}.",
+                "Vos véhicules sont livrés en 7 jours. L’offre période d’essai permet de tester un véhicule et de basculer en LLD ou de résilier sans pénalité.",
             },
           ],
           fleetManagementIntro:
-            "Simplifiez la gestion de vos véhicules d’entreprise et gagnez un temps précieux:contentReference[oaicite:33]{index=33}.",
+            "Simplifiez la gestion de vos véhicules d’entreprise et gagnez un temps précieux.",
           fleetManagementFeatures: [
             {
               title: "Suivi kilométrique en temps réel",
               description:
-                "Suivez facilement les kilomètres parcourus de tous vos véhicules en temps réel:contentReference[oaicite:34]{index=34}.",
+                "Suivez facilement les kilomètres parcourus par tous vos véhicules en temps réel.",
+              image: "/kilometrage.png",
             },
             {
               title: "Gestion des conducteurs",
               description:
-                "Attribuez vos véhicules à vos collaborateurs en un clic:contentReference[oaicite:35]{index=35}.",
+                "Attribuez vos véhicules à vos collaborateurs en un seul clic et gardez une visibilité claire.",
+              image: "/conducteurs.png",
             },
             {
               title: "Alertes pour les entretiens",
               description:
-                "Recevez des alertes pour vos prochains entretiens et ne manquez aucun rendez‑vous:contentReference[oaicite:36]{index=36}.",
+                "Recevez automatiquement des notifications pour vos prochains entretiens afin de ne manquer aucun rendez-vous.",
+              image: "/entretiens.png",
             },
             {
               title: "Suivi des contrats de location",
               description:
-                "Visualisez vos cycles de location et vos contrats en un coup d’œil:contentReference[oaicite:37]{index=37}.",
+                "Visualisez facilement les cycles de location et tous vos contrats en un coup d’œil.",
+              image: "/contrats.png",
             },
             {
               title: "Factures & documents centralisés",
               description:
-                "Gérez vos factures et centralisez tous vos documents au même endroit:contentReference[oaicite:38]{index=38}.",
+                "Centralisez et gérez vos factures ainsi que l’ensemble de vos documents administratifs au même endroit.",
+              image: "/documents.png",
             },
           ],
           pricing: [
@@ -247,14 +256,14 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               description: "Adaptez votre contrat selon vos besoins évolutifs.",
               icon: <Clock className="h-8 w-8 text-gray-600" />,
               details:
-                "Durées modulables de 1 à 24 mois : prolongez, réduisez ou changez de véhicule. L’offre période d’essai permet de basculer vers une LLD ou de résilier sans frais:contentReference[oaicite:39]{index=39}.",
+                "Durées modulables de 1 à 24 mois : prolongez, réduisez ou changez de véhicule. L’offre période d’essai permet de basculer vers une LLD ou de résilier sans frais.",
             },
             {
               title: "Service tout compris",
               description: "Zéro surprise : entretien et assurance inclus.",
               icon: <Shield className="h-8 w-8 text-gray-600" />,
               details:
-                "Une mensualité fixe qui couvre l’entretien régulier, l’assurance tous risques, l’assistance 24/7 et un véhicule de remplacement:contentReference[oaicite:40]{index=40}.",
+                "Une mensualité fixe qui couvre l’entretien régulier, l’assurance tous risques, l’assistance 24/7 et un véhicule de remplacement.",
             },
             {
               title: "Disponibilité quasi‑immédiate",
@@ -262,7 +271,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 "Tous nos véhicules sont en stock et livrés rapidement.",
               icon: <Award className="h-8 w-8 text-gray-600" />,
               details:
-                "Grâce à notre stock important, la livraison se fait en moyenne en 7 jours:contentReference[oaicite:41]{index=41} et un conseiller vous contacte dans les 24 heures pour finaliser votre choix:contentReference[oaicite:42]{index=42}.",
+                "Grâce à notre stock important, la livraison se fait en moyenne en 7 jour et un conseiller vous contacte dans les 24 heures pour finaliser votre choix.",
             },
           ],
           testimonials: [
@@ -285,22 +294,22 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             {
               question: "Quelle est la durée d'une location moyenne durée ?",
               answer:
-                "La location moyenne durée s’étend de 1 à 12 mois, voire jusqu’à 24 mois sans engagement:contentReference[oaicite:43]{index=43}.",
+                "La location moyenne durée s’étend de 1 à 12 mois, voire jusqu’à 24 mois sans engagement.",
             },
             {
               question: "Quel est le délai de livraison ?",
               answer:
-                "Pour une location moyenne durée, le délai de livraison est d’environ 7 jours:contentReference[oaicite:44]{index=44}.",
+                "Pour une location moyenne durée, le délai de livraison est d’environ 7 jours.",
             },
             {
               question: "Que comprend le loyer ?",
               answer:
-                "Votre loyer comprend le kilométrage, la durée de location, les entretiens réguliers et une assurance tous risques:contentReference[oaicite:45]{index=45}.",
+                "Votre loyer comprend le kilométrage, la durée de location, les entretiens réguliers et une assurance tous risques.",
             },
             {
               question: "Quand choisir une location moyenne durée ?",
               answer:
-                "Cette solution est idéale pour les besoins ponctuels, les projets temporaires ou l’attente d’un véhicule neuf:contentReference[oaicite:46]{index=46}.",
+                "Cette solution est idéale pour les besoins ponctuels, les projets temporaires ou l’attente d’un véhicule neuf.",
             },
           ],
         };
@@ -312,56 +321,61 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           description:
             "Louez un véhicule aussi longtemps que vous le souhaitez et stoppez à tout moment. Parfait pour les besoins ponctuels.",
           features: [
-            "Durée flexible à partir de 1 mois:contentReference[oaicite:47]{index=47}",
-            "Kilométrage modulable et avenant gratuit en cas de dépassement:contentReference[oaicite:48]{index=48}",
-            "Livraison rapide en environ 7 jours grâce à notre stock:contentReference[oaicite:49]{index=49}",
-            "Pas d’apport initial ; une caution restituable peut être demandée:contentReference[oaicite:50]{index=50}",
-            "Résiliation sans frais : mettez fin au contrat avec un préavis court:contentReference[oaicite:51]{index=51}",
+            "Durée flexible à partir de 1 mois",
+            "Kilométrage modulable et avenant gratuit en cas de dépassement",
+            "Livraison rapide en environ 7 jours grâce à notre stock",
+            "Pas d’apport initial ; une caution restituable peut être demandée",
+            "Résiliation sans frais : mettez fin au contrat avec un préavis court",
           ],
           offerOverview: [
             {
               title: "Durée et kilométrage flexibles",
               description:
-                "Commencez dès 1 mois, prolongez à volonté et ajustez votre kilométrage selon vos usages:contentReference[oaicite:52]{index=52}:contentReference[oaicite:53]{index=53}.",
+                "Commencez dès 1 mois, prolongez à volonté et ajustez votre kilométrage selon vos usages.",
             },
             {
               title: "Véhicules variés et équipés",
               description:
-                "Accédez à un large choix de voitures quasi‑neuves (citadine, berline, SUV, utilitaire) adaptées à vos besoins professionnels:contentReference[oaicite:54]{index=54}.",
+                "Accédez à un large choix de voitures quasi‑neuves (citadine, berline, SUV, utilitaire) adaptées à vos besoins professionnels.",
             },
             {
               title: "Pas d’engagement & livraison rapide",
               description:
-                "Aucun apport exigé (une caution peut être demandée et restituée) et livraison en quelques jours:contentReference[oaicite:55]{index=55}:contentReference[oaicite:56]{index=56}.",
+                "Aucun apport exigé (une caution peut être demandée et restituée) et livraison en quelques jour.",
             },
           ],
           fleetManagementIntro:
-            "Simplifiez la gestion de vos véhicules d’entreprise et gagnez un temps précieux:contentReference[oaicite:57]{index=57}.",
+            "Simplifiez la gestion de vos véhicules d’entreprise et gagnez un temps précieux.",
           fleetManagementFeatures: [
             {
               title: "Suivi kilométrique en temps réel",
               description:
-                "Suivez facilement les kilomètres parcourus de tous vos véhicules en temps réel:contentReference[oaicite:58]{index=58}.",
+                "Suivez facilement les kilomètres parcourus par tous vos véhicules en temps réel.",
+              image: "/kilometrage.png",
             },
             {
               title: "Gestion des conducteurs",
               description:
-                "Attribuez vos véhicules à vos collaborateurs en un clic:contentReference[oaicite:59]{index=59}.",
+                "Attribuez vos véhicules à vos collaborateurs en un seul clic et gardez une visibilité claire.",
+              image: "/conducteurs.png",
             },
             {
               title: "Alertes pour les entretiens",
               description:
-                "Recevez des alertes pour vos prochains entretiens et ne manquez aucun rendez‑vous:contentReference[oaicite:60]{index=60}.",
+                "Recevez automatiquement des notifications pour vos prochains entretiens afin de ne manquer aucun rendez-vous.",
+              image: "/entretiens.png",
             },
             {
               title: "Suivi des contrats de location",
               description:
-                "Visualisez vos cycles de location et vos contrats en un coup d’œil:contentReference[oaicite:61]{index=61}.",
+                "Visualisez facilement les cycles de location et tous vos contrats en un coup d’œil.",
+              image: "/contrats.png",
             },
             {
               title: "Factures & documents centralisés",
               description:
-                "Gérez vos factures et centralisez tous vos documents au même endroit:contentReference[oaicite:62]{index=62}.",
+                "Centralisez et gérez vos factures ainsi que l’ensemble de vos documents administratifs au même endroit.",
+              image: "/documents.png",
             },
           ],
           pricing: [
@@ -387,21 +401,21 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               description: "Arrêtez ou continuez selon vos envies.",
               icon: <Clock className="h-8 w-8 text-gray-600" />,
               details:
-                "Modifiez, prolongez ou stoppez votre location sans engagement. Grâce à la télématique, vos loyers s’ajustent à votre usage:contentReference[oaicite:63]{index=63}.",
+                "Modifiez, prolongez ou stoppez votre location sans engagement. Grâce à la télématique, vos loyers s’ajustent à votre usage.",
             },
             {
               title: "Simplicité extrême",
               description: "Réservation et gestion 100 % en ligne.",
               icon: <Shield className="h-8 w-8 text-gray-600" />,
               details:
-                "Processus digitalisé de la réservation à la restitution, signature électronique et interlocuteur unique pour vous accompagner:contentReference[oaicite:64]{index=64}.",
+                "Processus digitalisé de la réservation à la restitution, signature électronique et interlocuteur unique pour vous accompagner.",
             },
             {
               title: "Disponibilité rapide",
               description: "Véhicule livré sous une semaine partout en France.",
               icon: <Users className="h-8 w-8 text-gray-600" />,
               details:
-                "Nos véhicules en stock permettent une livraison en quelques jours, généralement en 7 jours:contentReference[oaicite:65]{index=65}.",
+                "Nos véhicules en stock permettent une livraison en quelques jours, généralement en 7 jours.",
             },
           ],
           testimonials: [
@@ -424,23 +438,23 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             {
               question: "Quelle est la durée minimale ?",
               answer:
-                "La location sans engagement commence dès 1 mois et peut être prolongée à volonté:contentReference[oaicite:66]{index=66}.",
+                "La location sans engagement commence dès 1 mois et peut être prolongée à volonté.",
             },
             {
               question: "Faut‑il un apport ou une caution ?",
               answer:
-                "Aucun apport n’est requis ; selon votre dossier, une caution peut être demandée et elle est restituée en fin de contrat:contentReference[oaicite:67]{index=67}.",
+                "Aucun apport n’est requis ; selon votre dossier, une caution peut être demandée et elle est restituée en fin de contrat.",
             },
             {
               question: "Quel est le délai de livraison ?",
               answer:
-                "Grâce à notre stock, les véhicules sont livrés en quelques jours, généralement en une semaine:contentReference[oaicite:68]{index=68}.",
+                "Grâce à notre stock, les véhicules sont livrés en quelques jours, généralement en une semaine.",
             },
             {
               question:
                 "Que se passe‑t‑il si je dépasse le kilométrage prévu ?",
               answer:
-                "Le boîtier télématique vous permet de suivre votre consommation en temps réel ; un avenant est réalisé gratuitement pour ajuster votre contrat:contentReference[oaicite:69]{index=69}.",
+                "Le boîtier télématique vous permet de suivre votre consommation en temps réel ; un avenant est réalisé gratuitement pour ajuster votre contrat.",
             },
           ],
         };
@@ -599,34 +613,9 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             </div>
           </div>
         </section>
-
-        {/* Offer Overview Section */}
-        {serviceContent.offerOverview && (
-          <section className="py-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-              Notre offre en détail
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {serviceContent.offerOverview.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-                >
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
-
         {/* Fleet Management Section */}
         {serviceContent.fleetManagementFeatures && (
-          <section className="py-16 bg-gray-50">
+          <section className="py-16 bg-gray-100">
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
               Outil de gestion de flotte automatisé
             </h2>
@@ -635,20 +624,42 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 {serviceContent.fleetManagementIntro}
               </p>
             )}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {serviceContent.fleetManagementFeatures.map((feat, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-2xl shadow p-6 hover:shadow-lg transition-shadow duration-300"
-                >
-                  <h4 className="text-lg font-semibold mb-3 text-gray-900">
-                    {feat.title}
-                  </h4>
-                  <p className="text-gray-600 leading-relaxed">
-                    {feat.description}
-                  </p>
-                </div>
-              ))}
+
+            <div
+              className="slider"
+              style={
+                {
+                  ["--width"]: "380px", // largeur des cards
+                  ["--height"]: "340px", // hauteur des cards
+                  ["--quantity"]: serviceContent.fleetManagementFeatures.length,
+                } as React.CSSProperties
+              }
+            >
+              <div className="list">
+                {serviceContent.fleetManagementFeatures.map((feat, index) => (
+                  <div
+                    key={index}
+                    className="item"
+                    style={{ ["--position"]: index + 1 } as React.CSSProperties}
+                  >
+                    <div className="card">
+                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                        {feat.title}
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        {feat.description}
+                      </p>
+                      {feat.image && (
+                        <img
+                          src={feat.image}
+                          alt={feat.title}
+                          className="w-full h-28 object-contain mb-4"
+                        />
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}
