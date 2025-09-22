@@ -290,7 +290,6 @@ const Header: React.FC<HeaderProps> = ({
     [onPageChange]
   );
 
-  // Remplacer l'effet useEffect existant pour les brands par celui-ci :
   useEffect(() => {
     let alive = true;
     (async () => {

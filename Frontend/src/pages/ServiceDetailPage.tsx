@@ -616,11 +616,11 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
         {/* Fleet Management Section */}
         {serviceContent.fleetManagementFeatures && (
           <section className="py-16 bg-gray-100">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">
               Outil de gestion de flotte automatisé
             </h2>
             {serviceContent.fleetManagementIntro && (
-              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+              <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
                 {serviceContent.fleetManagementIntro}
               </p>
             )}
@@ -629,8 +629,8 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               className="slider"
               style={
                 {
-                  ["--width"]: "380px", // largeur des cards
-                  ["--height"]: "340px", // hauteur des cards
+                  ["--width"]: "360px", // largeur des cards
+                  ["--height"]: "360px", // hauteur des cards
                   ["--quantity"]: serviceContent.fleetManagementFeatures.length,
                 } as React.CSSProperties
               }
@@ -643,17 +643,17 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                     style={{ ["--position"]: index + 1 } as React.CSSProperties}
                   >
                     <div className="card">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-2">
+                      <h4 className="text-xl font-semibold text-gray-900 mb-2">
                         {feat.title}
                       </h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-md text-gray-700 mb-7">
                         {feat.description}
                       </p>
                       {feat.image && (
                         <img
                           src={feat.image}
                           alt={feat.title}
-                          className="w-full h-28 object-contain mb-4"
+                          className="w-full h-40 object-contain mb-4"
                         />
                       )}
                     </div>
